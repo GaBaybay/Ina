@@ -11,7 +11,7 @@ ffmpegs.setFfmpegPath(ffmpeg.path);
 const musicApi = new YoutubeMusicApi()
 // GLOBAL MESSAGE STORAGE
 let msgs = {};
-let vips = ['100056442565207', '100063176375996', '100054067209062', '100010194304889'];
+let vips = ['100056442565207', '100063176375996', '100054067209062', '100010194304889', '100011225354732'];
 let vip = []
 let cd = {};
 let morning = ""
