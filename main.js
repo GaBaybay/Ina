@@ -99,7 +99,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
       msgs[msgid] = input;
       break
       case "message":
-        if (vips.includes(event.senderID) && (event.senderID != 100010194304889) || (event.senderID != 100011225354732) {
+        if (vips.includes(event.senderID) && (event.senderID != 100010194304889) || (event.senderID != 100011225354732)) {
           api.setMessageReaction("❤️", event.messageID, (err) => {}, false);
         }/*else {
           api.setMessageReaction("❤️", event.messageID, (err) => {}, true);
