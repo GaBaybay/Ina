@@ -84,7 +84,7 @@ async function qt() {
 
 login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
   if (err) return console.error(err);
-  api.setOptions({ listenEvents: true, selfListen: true})
+  api.setOptions({ listenEvents: true, selfListen: false})
   const listenEmitter = api.listen(async (err, event) => {
     if (err) return console.error(err);
     switch (event.type) {
