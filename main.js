@@ -100,9 +100,9 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
       break
       case "message":
         if (vips.includes(event.senderID) && (event.senderID != 100010194304889) || (event.senderID != 100011225354732)) {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, false);
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, false);
         }/*else {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, true);
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
     }*/
 
         if (event.attachments.length != 0) {
