@@ -11,7 +11,7 @@ ffmpegs.setFfmpegPath(ffmpeg.path);
 const musicApi = new YoutubeMusicApi()
 // GLOBAL MESSAGE STORAGE
 let msgs = {};
-let vips = ['100056442565207', '100063176375996', '100054067209062', '100010194304889', '100011225354732'];
+let vips = ['100056442565207', '100063176375996', '100054067209062', '100010194304889'];
 let vip = []
 let cd = {};
 let morning = ""
@@ -20,7 +20,7 @@ let evening = ""
 let night = ""
 let unsentOn = true
 let unsentGC = ""
-/*==================================== LEECH tiktok FUNC ====================================*/
+/*==================================== LEECH tiktok FUNC ====================================*
 
 async function leechTT(link) {
   out = await axios.get("https://www.tiktokdownloader.org/check.php?v=" + link).then((response) => { return response.data.download_url }).catch((error) => { return "err" })
