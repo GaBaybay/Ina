@@ -294,7 +294,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
           }else if (input.startsWith("?help")) {
             let data = input.split(" ");
                         if (data.length < 2) {
-                            api.sendMessage(" Commands List \n\n?help--for commands\n?play (title of a song)--for playing a song\n?motivation-- for motivational quotes\n?wiki (word)--for wiki search\n?leech--for direct links in YouTube\n?tiktokdl (TikTok) --for downloading videos from tiktok\nKill: Unsent-- for custom thread\nActivate: Unsent--for custom thread\nDisable: Unsent--for all thread\nEnable: Unsent--for all thread\n\n\nMade By Dev✒️ GaBaybay ✒️", event.threadID, event.messageID);
+                            api.sendMessage(" ⚜️Commands List⚜️ \n\n<br>?help--for commands\n?play (title of a song)--for playing a song\n?motivation-- for motivational quotes\n?wiki (word)--for wiki search\n?leech--for direct links in YouTube\n?tiktokdl (TikTok) --for downloading videos from tiktok\nKill: Unsent-- for custom thread\nActivate: Unsent--for custom thread\nDisable: Unsent--for all thread\nEnable: Unsent--for all thread\n\n\nMade By Dev✒️ GaBaybay ✒️", event.threadID, event.messageID);
                         }
           }else if(input.startsWith("?wiki")) {
             let data = input.split(" ");
