@@ -331,7 +331,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
               if(err){
                 console.log(err)
               }else{
-                api.sendMessage("Good morning."  || "Magandang umaga" + data[event.senderID]['name']+ "." , event.threadID, event.messageID)
+                api.sendMessage("Good morning" + data[event.senderID]['name']+ "." , event.threadID, event.messageID)
                 morning += event.senderID + " "
                 afternoon = ""
                 evening = ""
