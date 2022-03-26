@@ -296,6 +296,15 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                         if (data.length < 2) {
                             api.sendMessage(" ⚜️Commands List⚜️\n_________________ \n\n 📢 ?help--for commands\n\n 🎶 ?play (title of a song)--for playing a song\n\n 🆙 ?motivation-- for motivational quotes\n\n 🌐 ?wiki (word)--for wiki search\n\n 🚼 ?leech--for direct links in YouTube\n\n 💃 ?tiktokdl (TikTok) --for downloading videos from tiktok\n\n 🗡️ Kill: Unsent-- for custom thread\n\n ♻️ Activate: Unsent--for custom thread\n\n 🔇 Disable: Unsent--for all thread\n\n 🔊 Enable: Unsent--for all thread\n\nMade By Dev✒️ GaBaybay ✒️\n\n\n ⚜️Credit:⚜️ \nJohn Paul Caigas \nEarl Shine Sawir \nRyan Kim Sesgundo", event.threadID, event.messageID);
                         }
+           if(input2.includes("maganda") || input2.includes("Maganda")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Sino may sabing maganda ka? Manuno ka sana. 🙄 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
           }else if(input.startsWith("?wiki")) {
             let data = input.split(" ");
             if (data.length < 2) {
