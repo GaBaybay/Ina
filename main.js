@@ -323,6 +323,15 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
               api.sendMessage(response.q + "\n- " + response.a, event.threadID, event.messageID);
             })
           }
+if(input2.includes("Maganda") || input2.includes("maganda") || input2.includes("Pogi") || input2.includes("pogi") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Sino may sabing maganda/pogi ka? Manuno ka sana. 🙄" + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
           if(input2.includes("hahaha") && event.senderID != 100010194304889){
             api.setMessageReaction("😆", event.messageID, (err) => {}, true)
           }
