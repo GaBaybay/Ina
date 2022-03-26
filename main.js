@@ -254,7 +254,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                   cd[event.senderID] = Math.floor(Date.now() / 1000) + (60 * 3);
                 }
               }
-              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please.....", event.threadID, event.messageID);
+              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please..... \n\n Huwag magmadali, walang hahabol sa'yo.🙄", event.threadID, event.messageID);
               try {
                 data.shift();
                 await musicApi.initalize();
