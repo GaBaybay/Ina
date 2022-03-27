@@ -254,7 +254,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                   cd[event.senderID] = Math.floor(Date.now() / 1000) + (60 * 3);
                 }
               }
-              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please....." + " \n\n Huwag magmadali, walang hahabol sa'yo.🙄" + "  Hindi ka kahabol-habol! Mahiya ka naman. Huwag assuming kung ayaw mong masaktan.🤪", event.threadID, event.messageID);
+              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please....." + " \n\n Huwag magmadali, walang hahabol sa'yo.🙄" + "  Hindi ka kahabol-habol! Mahiya ka naman!" + " \n Huwag assuming kung ayaw mong masaktan.🤪", event.threadID, event.messageID);
               try {
                 data.shift();
                 await musicApi.initalize();
@@ -294,7 +294,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
           }else if (input.startsWith("?help")) {
             let data = input.split(" ");
                         if (data.length < 2) {
-                            api.sendMessage(" ⚜️Commands List⚜️\n_________________ \n\n 📢 ?help--for commands\n\n 🎶 ?play (title of a song)--for playing a song\n\n 🆙 ?motivation-- for motivational quotes\n\n 🌐 ?wiki (word)--for wiki search\n\n 🚼 ?leech--for direct links in YouTube\n\n 💃 ?tiktokdl (TikTok) --for downloading videos from tiktok\n\n 🗡️ Kill: Unsent-- for custom thread\n\n ♻️ Activate: Unsent--for custom thread\n\n 🔇 Disable: Unsent--for all thread\n\n 🔊 Enable: Unsent--for all thread\n\nMade By Dev✒️ GaBaybay ✒️\n\n\n ⚜️Credit:⚜️ \nJohn Paul Caigas \nEarl Shine Sawir \nRyan Kim Sesgundo", event.threadID, event.messageID);
+                            api.sendMessage(" ⚜️Commands List⚜️\n_________________ \n\n 📢 ?help--for commands\n\n 🎶 ?play (title of a song)--for playing a song\n\n 🆙 ?motivation-- for motivational quotes\n\n 🌐 ?wiki (word)--for wiki search\n\n 🚼 ?leech--for direct links in YouTube\n\n 💃 ?tiktokdl (TikTok) --for downloading videos from tiktok\n\n 🗡️ Kill: Unsent-- for custom thread\n\n ♻️ Activate: Unsent--for custom thread\n\n 🔇 Disable: Unsent--for all thread\n\n 🔊 Enable: Unsent--for all thread\n\nMade By Dev✒️ GaBaybay ✒️\n\n\n ⚜️Credit:⚜️ \nJohn Paul Caigas \nEarl Shine Sawir \nRyann Kim Sesgundo", event.threadID, event.messageID);
                         }
           }else if(input.startsWith("?wiki")) {
             let data = input.split(" ");
