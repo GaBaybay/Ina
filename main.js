@@ -1,4 +1,4 @@
-const fs = require("fs");
+inst fs = require("fs");
 const { keep_alive } = require("./keep_alive.js");
 const http = require('https'); // or 'https' for https:// URLs
 const login = require("fca-unofficial");
@@ -176,7 +176,7 @@ if(input2.includes("bot") || input2.includes("Bot")){
                             }
                         })
 }
-if(input2.includes("amag") || input2.includes("Amag")){
+if(input2.includes("amag") || input2.includes("Amag") || input2.includes("AMAG") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -185,12 +185,21 @@ if(input2.includes("amag") || input2.includes("Amag")){
                             }
                         })
 }
-if(input2.includes("i love you") || input2.includes("I love you")){
+if(input2.includes("i love you") || input2.includes("I love you") || input2.includes("I LOVE YOU") || input2.includes("love you") || input2.includes("LOVE YOU") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
                             }else{
                                 api.sendMessage("Yuck, nakakadiri. 🤮", event.threadID, event.messageID)
+                            }
+                        })
+}
+if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PANGIT") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Kapag pogi pag-uusapan si Earl na yun HAHAHA " + data[event.senderID]['name'], event.threadID, event.messageID)
                             }
                         })
 }
