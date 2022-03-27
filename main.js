@@ -176,6 +176,24 @@ if(input2.includes("bot") || input2.includes("Bot")){
                             }
                         })
 }
+if(input2.includes("amag") || input2.includes("Amag")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Pano di amagin, di kayo nagchachat at naglalapag! 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
+if(input2.includes("i love you") || input2.includes("I love you")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Yuck, nakakadiri. 🤮" + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
           if (input.startsWith("?leech")) {
             let data = input.split(" ");
             if (data.length < 2) {
