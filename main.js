@@ -199,7 +199,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage("Kapag pogi pag-uusapan si Earl na yun HAHAHA " + data[event.senderID]['name'], event.threadID, event.messageID)
+                                api.sendMessage("Oo, pangit ka, huwag assuming. " + data[event.senderID]['name'], event.threadID, event.messageID)
                             }
                         })
 }
