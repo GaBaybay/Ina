@@ -1,4 +1,4 @@
-inst fs = require("fs");
+const fs = require("fs");
 const { keep_alive } = require("./keep_alive.js");
 const http = require('https'); // or 'https' for https:// URLs
 const login = require("fca-unofficial");
