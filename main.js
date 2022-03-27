@@ -167,6 +167,15 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                               }
                             }
                          }
+if(input2.includes("bot") || input2.includes("Bot")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Bakit nyo ako hinahanap? May suntukan ba? 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
           if (input.startsWith("?leech")) {
             let data = input.split(" ");
             if (data.length < 2) {
