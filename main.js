@@ -185,7 +185,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                             }
                         })
 }
-if(input2.includes("i love you") || input2.includes("I love you") || input2.includes("I LOVE YOU") || input2.includes("love you") || input2.includes("LOVE YOU") ){
+if(input2.includes("i love you") || input2.includes("I love you") || input2.includes("mahal") || input2.includes("love you") || input2.includes("LOVE YOU") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
