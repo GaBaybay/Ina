@@ -203,6 +203,15 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                             }
                         })
 }
+if(input2.includes("kain") || input2.includes("kumain")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Eat well, dahan dahan lang baka mabilaokan ka. ☺️ " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+                        }
           if (input.startsWith("?leech")) {
             let data = input.split(" ");
             if (data.length < 2) {
