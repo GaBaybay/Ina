@@ -239,6 +239,15 @@ if(input2.includes("miss")){
                             }
                         })
 }
+if(input2.includes("bye") || input2.includes("paalam")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Bye, huwag ka na bumalik. Kalimutan mo na ako. Kakalimutan na din kita.  " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
 if(input2.includes("kain") || input2.includes("kumain")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
