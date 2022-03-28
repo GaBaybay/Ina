@@ -424,7 +424,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
               if(err){
                 console.log(err)
               }else{
-                api.sendMessage("Good morning."  || "Magandang umaga.", event.threadID, event.messageID)
+                api.sendMessage("Good morning " + data[event.senderID]['name'] +"." , event.threadID, event.messageID)
                 morning += event.senderID + " "
                 afternoon = ""
                 evening = ""
@@ -436,7 +436,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                    if(err){
                      console.log(err)
                    }else{
-                          api.sendMessage("Good afternoon." , event.threadID, event.messageID)
+                          api.sendMessage("Good afternoon" + data[event.senderID]['name'] +".", event.threadID, event.messageID)
                           morning = ""
                       afternoon += event.senderID + " "
                         evening = ""
@@ -449,7 +449,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
               if(err){
                 console.log(err)
               }else{
-                api.sendMessage("Good evening. ", event.threadID, event.messageID)
+                api.sendMessage("Good evening " + data[event.senderID]['name'] +"." , event.threadID, event.messageID)
                 morning = ""
                 afternoon = ""
                 evening += event.senderID + " "
@@ -461,7 +461,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
               if(err){
                 console.log(err)
               }else{
-                api.sendMessage("Good Night, Sleep Well. Sweet dreams. ", event.threadID, event.messageID)
+                api.sendMessage("Good Night, Sleep Well. Sweet dreams "+ data[event.senderID]['name'] +"."  , event.threadID, event.messageID)
                 morning = ""
                 afternoon = ""
                 evening = ""
