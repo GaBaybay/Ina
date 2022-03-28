@@ -98,77 +98,8 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
         let input = event.body;
         let input2 = input.toLowerCase();
       msgs[msgid] = input;
-      break
-      case "message":
-        if (vips.includes(event.senderID) && (event.senderID != 100010194304889) || (event.senderID != 100011225354732)) {
-          api.setMessageReaction("🌹", event.messageID, (err) => {}, false);
-        }else {
-          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
-    }
-
-        if (event.attachments.length != 0) {
-          if (event.attachments[0].type == "photo") {
-            msgs[event.messageID] = ['img', event.attachments[0].url]
-          }else if (event.attachments[0].type == "animated_image") {
-            msgs[event.messageID] = ['gif', event.attachments[0].url]
-          }else if (event.attachments[0].type == "sticker") {
-            msgs[event.messageID] = ['sticker', event.attachments[0].url]
-          }else if (event.attachments[0].type == "video") {
-            msgs[event.messageID] = ['vid', event.attachments[0].url]
-          }else if (event.attachments[0].type == "audio") {
-            msgs[event.messageID] = ['vm', event.attachments[0].url]
-          }
-        } else {
-          msgs[event.messageID] = event.body
-        }
-        if (event.body != null) {
-          let myDay = 0
-          if((new Date().getHours() + 8) > 24){
-            myDay = (new Date().getHours() + 8) - 24
-          }else{
-            myDay = new Date().getHours() + 8
-          }
-          let input = event.body;
-          let input2 = input.toLowerCase();
-          if(vips.includes(event.senderID)){
-          if(input.startsWith("Enable: Unsent") && !unsentOn){
-                            unsentOn = true
-                            api.sendMessage("Anti Unsent is now active.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent has turned on!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Disable: Unsent") && unsentOn){
-                            unsentOn = false
-                            api.sendMessage("Anti Unsent has been disabled.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent has turned off!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Activate: Unsent") && unsentGC.includes(event.threadID)){
-                            unsentGC = unsentGC.replace(event.threadID + " ", "")
-                            api.sendMessage("Anti Unsent is now activated for this conversation.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent was activated from a custom thread!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Kill: Unsent") && !unsentGC.includes(event.threadID)){
-                            unsentGC += event.threadID + " "
-                            api.sendMessage("Anti Unsent is now deactivated for this conversation.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent was deactivated from a custom thread!", vip[i])
-                                }
-                              }
-                            }
-                         }
-                     if(input2.includes("bot") || input2.includes("Bot")){
+     
+      if(input2.includes("bot") || input2.includes("Bot")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -258,6 +189,78 @@ if(input2.includes("kain") || input2.includes("kumain")){
                             }
                         })
                         }
+
+      break
+      case "message":
+        if (vips.includes(event.senderID) && (event.senderID != 100010194304889) || (event.senderID != 100011225354732)) {
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, false);
+        }else {
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
+    }
+
+        if (event.attachments.length != 0) {
+          if (event.attachments[0].type == "photo") {
+            msgs[event.messageID] = ['img', event.attachments[0].url]
+          }else if (event.attachments[0].type == "animated_image") {
+            msgs[event.messageID] = ['gif', event.attachments[0].url]
+          }else if (event.attachments[0].type == "sticker") {
+            msgs[event.messageID] = ['sticker', event.attachments[0].url]
+          }else if (event.attachments[0].type == "video") {
+            msgs[event.messageID] = ['vid', event.attachments[0].url]
+          }else if (event.attachments[0].type == "audio") {
+            msgs[event.messageID] = ['vm', event.attachments[0].url]
+          }
+        } else {
+          msgs[event.messageID] = event.body
+        }
+        if (event.body != null) {
+          let myDay = 0
+          if((new Date().getHours() + 8) > 24){
+            myDay = (new Date().getHours() + 8) - 24
+          }else{
+            myDay = new Date().getHours() + 8
+          }
+          let input = event.body;
+          let input2 = input.toLowerCase();
+          if(vips.includes(event.senderID)){
+          if(input.startsWith("Enable: Unsent") && !unsentOn){
+                            unsentOn = true
+                            api.sendMessage("Anti Unsent is now active.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent has turned on!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Disable: Unsent") && unsentOn){
+                            unsentOn = false
+                            api.sendMessage("Anti Unsent has been disabled.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent has turned off!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Activate: Unsent") && unsentGC.includes(event.threadID)){
+                            unsentGC = unsentGC.replace(event.threadID + " ", "")
+                            api.sendMessage("Anti Unsent is now activated for this conversation.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent was activated from a custom thread!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Kill: Unsent") && !unsentGC.includes(event.threadID)){
+                            unsentGC += event.threadID + " "
+                            api.sendMessage("Anti Unsent is now deactivated for this conversation.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent was deactivated from a custom thread!", vip[i])
+                                }
+                              }
+                            }
+                         }
+                     
           if (input.startsWith("?leech")) {
             let data = input.split(" ");
             if (data.length < 2) {
@@ -379,184 +382,4 @@ if(input2.includes("kain") || input2.includes("kumain")){
                   }, event.threadID, event.messageID);
                 });
               } catch (err) {
-                api.sendMessage(`⚠️${err.message}`, event.threadID, event.messageID);
-              }
-            }
-          }else if (input.startsWith("?help")) {
-            let data = input.split(" ");
-                        if (data.length < 2) {
-                            api.sendMessage(" ⚜️Commands List⚜️\n_________________ \n\n 📢 ?help--for commands\n\n 🎶 ?play (title of a song)--for playing a song\n\n 🆙 ?motivation-- for motivational quotes\n\n 🌐 ?wiki (word)--for wiki search\n\n 🚼 ?leech--for direct links in YouTube\n\n 💃 ?tiktokdl (TikTok) --for downloading videos from tiktok\n\n 🗡️ Kill: Unsent-- for custom thread\n\n ♻️ Activate: Unsent--for custom thread\n\n 🔇 Disable: Unsent--for all thread\n\n 🔊 Enable: Unsent--for all thread\n\nMade By Dev✒️ GaBaybay ✒️\n\n\n ⚜️Credit:⚜️ \nJohn Paul Caigas \nEarl Shine Sawir \nRyann Kim Sesgundo", event.threadID, event.messageID);
-                        }
-          }else if(input.startsWith("?wiki")) {
-            let data = input.split(" ");
-            if (data.length < 2) {
-              api.sendMessage("⚠️Invalid Use Of Command!\n💡Usage: ?wiki word", event.threadID);
-            } else {
-              try {
-                data.shift()
-                var txtWiki = "";
-                let res = await getWiki(data.join(" "));
-                if(res === undefined){
-                  throw new Error(`API RETURNED THIS: ${res}`)
-                }
-                if(res.title === undefined) {
-                  throw new Error(`API RETURNED THIS: ${res}`)
-                }
-                txtWiki += `🔎You search the word ${res.title} \n\nTimeStamp: ${res.timestamp}\n\n💡Description: ${res.description}\n\n💡Info: ${res.extract}`
-                api.sendMessage(`${txtWiki}`, event.threadID, event.messageID);
-              }catch (err) {
-                api.sendMessage(`⚠️${err.message}`, event.threadID, event.messageID);
-              }
-            }
-          }else if (input.startsWith("?motivation")) {
-            let rqt = qt();
-            rqt.then((response) => {
-              api.sendMessage(response.q + "\n- " + response.a, event.threadID, event.messageID);
-            })
-          }
-          if(input2.includes("hahaha") && event.senderID != 100010194304889){
-            api.setMessageReaction("😆", event.messageID, (err) => {}, true)
-          }
-          if((input2.includes("good morning" ) || input2.includes("magandang umaga") || input2.includes("morning") ) && (myDay >= 6 && myDay < 12) && !morning.includes(event.senderID) && event.senderID != 100010194304889){
-            api.getUserInfo(event.senderID, (err, data) => {
-              if(err){
-                console.log(err)
-              }else{
-                api.sendMessage("Good morning " + data[event.senderID]['name']+ "." , event.threadID, event.messageID)
-                morning += event.senderID + " "
-                afternoon = ""
-                evening = ""
-                night  = ""
-              }
-            } )
-          }else if((input2.includes("good afternoon") || input2.includes("magandang hapon") || input2.includes("hapon")|| input2.includes("aft") ) && (myDay >= 12 && myDay < 18) && !afternoon.includes(event.senderID) && event.senderID != 100010194304889){           
-                 api.getUserInfo(event.senderID, (err, data) => {
-                   if(err){
-                     console.log(err)
-                   }else{
-                          api.sendMessage("Good afternoon " + data[event.senderID]['name'] + "." , event.threadID, event.messageID)
-                          morning = ""
-                      afternoon += event.senderID + " "
-                        evening = ""
-                        night = ""
-                     }
-                            })
-                         }
-          else if((input2.includes("good evening") || input2.includes("magandang gabi") || input2.includes("evening") ) && (myDay >= 18 && myDay < 22) && !evening.includes(event.senderID) && event.senderID != 100010194304889){
-            api.getUserInfo(event.senderID, (err, data) => {
-              if(err){
-                console.log(err)
-              }else{
-                api.sendMessage("Good evening " + data[event.senderID]['name']  , event.threadID, event.messageID)
-                morning = ""
-                afternoon = ""
-                evening += event.senderID + " "
-                night = ""
-              }
-            })
-          }else if(input2.includes("good night") || input2.includes("night") && (myDay >= 22 || myDay < 6) && !night.includes(event.senderID) && event.senderID != 100010194304889){
-            api.getUserInfo(event.senderID, (err, data) => {
-              if(err){
-                console.log(err)
-              }else{
-                api.sendMessage("Good Night, Sleep Well. Sweet dreams " + data[event.senderID]['name'] + "." , event.threadID, event.messageID)
-                morning = ""
-                afternoon = ""
-                evening = ""
-                night += event.senderID + " "
-              }
-            })
-          }
-          }
-      break;
-      case"message_unsend":
-      if(unsentOn && !unsentGC.includes(event.threadID)){
-        if (!vips.includes(event.senderID)) {
-          let d = msgs[event.messageID];
-          if (typeof (d) == "object") {
-            api.getUserInfo(event.senderID, (err, data) => {
-              if (err){
-                return console.error(err);
-              }else {
-                if (d[0] == "img") {
-                  var file = fs.createWriteStream("photo.jpg");
-                  var gifRequest = http.get(d[1], function (gifResponse) {
-                    gifResponse.pipe(file);
-                    file.on('finish', function () {
-                      console.log('finished downloading photo..')
-                      var message = {
-                        body: data[event.senderID]['name'] + " unsent this photo: \n",
-                        attachment: fs.createReadStream(__dirname + '/photo.jpg')
-                      }
-                      api.sendMessage(message, event.threadID);
-                    });
-                  });
-                }else if (d[0] == "gif") {
-                  var file = fs.createWriteStream("animated_image.gif");
-                  var gifRequest = http.get(d[1], function (gifResponse) {
-                    gifResponse.pipe(file);
-                    file.on('finish', function () {
-                      console.log('finished downloading gif..')
-                      var message = {
-                        body: data[event.senderID]['name'] + " unsent this GIF: \n",
-                        attachment: fs.createReadStream(__dirname + '/animated_image.gif')
-                      }
-                      api.sendMessage(message, event.threadID);
-                    });
-                  });
-                }else if (d[0] == "sticker") {
-                  var file = fs.createWriteStream("sticker.png");
-                  var gifRequest = http.get(d[1], function (gifResponse) {
-                    gifResponse.pipe(file);
-                    file.on('finish', function () {
-                      console.log('finished downloading sticker..')
-                      var message = {
-                        body: data[event.senderID]['name'] + " unsent this Sticker: \n",
-                        attachment: fs.createReadStream(__dirname + '/sticker.png')
-                      }
-                      api.sendMessage(message, event.threadID);
-                    });
-                  });
-                }else if (d[0] == "vid") {
-                  var file = fs.createWriteStream("video.mp4");
-                  var gifRequest = http.get(d[1], function (gifResponse) {
-                    gifResponse.pipe(file);
-                    file.on('finish', function () {
-                      console.log('finished downloading video..')
-                      var message = {
-                        body: data[event.senderID]['name'] + " unsent this video: \n",
-                        attachment: fs.createReadStream(__dirname + '/video.mp4')
-                      }
-                      api.sendMessage(message, event.threadID);
-                    });
-                  });
-                }else if (d[0] == "vm") {
-                  var file = fs.createWriteStream("vm.mp3");
-                  var gifRequest = http.get(d[1], function (gifResponse) {
-                    gifResponse.pipe(file);
-                    file.on('finish', function () {
-                      console.log('finished downloading audio..')
-                      var message = {
-                        body: data[event.senderID]['name'] + " unsent this audio: \n",
-                        attachment: fs.createReadStream(__dirname + '/vm.mp3')
-                      }
-                      api.sendMessage(message, event.threadID);
-                    });
-                  });
-                }
-              }
-            });
-          }else {
-            api.getUserInfo(event.senderID, (err, data) => {
-              if (err) return console.error(err);
-              else {
-                api.sendMessage(data[event.senderID]['name'] + " unsent this message: \n\n" + msgs[event.messageID] + "\n\nAnti Unsent By Dev. ✒️ GaBaybay ✒️", event.threadID);
-              }
-            });
-          }
-          }
-      break;
-      }
-    }
-  });
-});
+                api.sendMessage(`⚠️${err.message}`, event.threadID, ev
