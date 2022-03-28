@@ -203,6 +203,15 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                             }
                         })
 }
+if(input2.includes("hate") || input2.includes("ayoko")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("I HATE YOU MORE! LEAVE ME ALONE! 😡 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
 if(input2.includes("mahal kita") || input2.includes("mahal na kita")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
