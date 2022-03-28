@@ -419,7 +419,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
           if(input2.includes("hahaha") && event.senderID != 100010194304889){
             api.setMessageReaction("😆", event.messageID, (err) => {}, true)
           }
-          if((input2.includes("good morning" ) || input2.includes("magandang umaga")) && (myDay >= 6 && myDay < 12) && !morning.includes(event.senderID) && event.senderID != 100010194304889){
+          if((input2.includes("good morning" ) || input2.includes("magandang umaga")|| input2.includes("morning")) && (myDay >= 6 && myDay < 12) && !morning.includes(event.senderID) && event.senderID != 100010194304889){
             api.getUserInfo(event.senderID, (err, data) => {
               if(err){
                 console.log(err)
@@ -431,7 +431,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                 night  = ""
               }
             } )
-          }else if((input2.includes("good afternoon") || input2.includes("magandang hapon")) && (myDay >= 12 && myDay < 18) && !afternoon.includes(event.senderID) && event.senderID != 100010194304889){           
+          }else if((input2.includes("good afternoon") || input2.includes("magandang hapon") || input2.includes("afternoon") ) && (myDay >= 12 && myDay < 18) && !afternoon.includes(event.senderID) && event.senderID != 100010194304889){           
                  api.getUserInfo(event.senderID, (err, data) => {
                    if(err){
                      console.log(err)
@@ -444,7 +444,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                      }
                             })
                          }
-          else if((input2.includes("good evening") || input2.includes("magandang gabi")) && (myDay >= 18 && myDay < 22) && !evening.includes(event.senderID) && event.senderID != 100010194304889){
+          else if((input2.includes("good evening") || input2.includes("magandang gabi") || input2.includes("evening") ) && (myDay >= 18 && myDay < 22) && !evening.includes(event.senderID) && event.senderID != 100010194304889){
             api.getUserInfo(event.senderID, (err, data) => {
               if(err){
                 console.log(err)
@@ -456,7 +456,7 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                 night = ""
               }
             })
-          }else if(input2.includes("good night") && (myDay >= 22 || myDay < 6) && !night.includes(event.senderID) && event.senderID != 100010194304889){
+          }else if(input2.includes("good night") || input2.includes("night")  && (myDay >= 22 || myDay < 6) && !night.includes(event.senderID) && event.senderID != 100010194304889){
             api.getUserInfo(event.senderID, (err, data) => {
               if(err){
                 console.log(err)
