@@ -344,7 +344,7 @@ if(input2.includes("kain") || input2.includes("kumain")){
                   cd[event.senderID] = Math.floor(Date.now() / 1000) + (60 * 3);
                 }
               }
-              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please.....", event.threadID, event.messageID);
+              api.sendMessage("🔃Requesting... " + "\n\n Once at a time only please....." + "\n\nHuwag mong pagsabayin, TAO 'YAN HINDI BAGAY, NASASAKTAN DIN 'YAN! \n HINDI KA LANG MINAHAL NG TOTOO, NAG MULTIPLE LOVER KA NA! 🙄" , event.threadID, event.messageID);
               try {
                 data.shift();
                 await musicApi.initalize();
