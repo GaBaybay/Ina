@@ -90,120 +90,15 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
     switch (event.type) {
       case "message_reply":
         if (vips.includes(event.senderID) && event.senderID != 100010194304889) {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, true);
-        }/*else {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, true);
-    }*/
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
+        }else {
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
+    }
         let msgid = event.messageID
         let input = event.body;
+        let input2= input.toLowerCase();
       msgs[msgid] = input;
-      break
-      case "message":
-        if (vips.includes(event.senderID) && event.senderID != 100010194304889) {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, false);
-        }/*else {
-          api.setMessageReaction("❤️", event.messageID, (err) => {}, true);
-    }*/
-
-        if (event.attachments.length != 0) {
-          if (event.attachments[0].type == "photo") {
-            msgs[event.messageID] = ['img', event.attachments[0].url]
-          }else if (event.attachments[0].type == "animated_image") {
-            msgs[event.messageID] = ['gif', event.attachments[0].url]
-          }else if (event.attachments[0].type == "sticker") {
-            msgs[event.messageID] = ['sticker', event.attachments[0].url]
-          }else if (event.attachments[0].type == "video") {
-            msgs[event.messageID] = ['vid', event.attachments[0].url]
-          }else if (event.attachments[0].type == "audio") {
-            msgs[event.messageID] = ['vm', event.attachments[0].url]
-          }
-        } else {
-          msgs[event.messageID] = event.body
-        }
-        if (event.body != null) {
-          let myDay = 0
-          if((new Date().getHours() + 8) > 24){
-            myDay = (new Date().getHours() + 8) - 24
-          }else{
-            myDay = new Date().getHours() + 8
-          }
-          let input = event.body;
-          let input2 = input.toLowerCase();
-          if(vips.includes(event.senderID)){
-          if(input.startsWith("Enable: Unsent") && !unsentOn){
-                            unsentOn = true
-                            api.sendMessage("Anti Unsent is now active.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent has turned on!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Disable: Unsent") && unsentOn){
-                            unsentOn = false
-                            api.sendMessage("Anti Unsent has been disabled.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent has turned off!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Activate: Unsent") && unsentGC.includes(event.threadID)){
-                            unsentGC = unsentGC.replace(event.threadID + " ", "")
-                            api.sendMessage("Anti Unsent is now activated for this conversation.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent was activated from a custom thread!", vip[i])
-                                }
-                            }
-                        }
-                        if(input.startsWith("Kill: Unsent") && !unsentGC.includes(event.threadID)){
-                            unsentGC += event.threadID + " "
-                            api.sendMessage("Anti Unsent is now deactivated for this conversation.", event.threadID, event.messageID)
-                            for(let i = 0; i < vip.length; i++){
-                                if(vip[i] != event.threadID){
-                                    api.sendMessage("Anti Unsent was deactivated from a custom thread!", vip[i])
-                                }
-                              }
-                            }
-                         }
-               if(input2.includes("bot") || input2.includes("Bot")){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Bakit nyo ako HINAHANAP? May suntukan ba? LIKA!😡 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
-                            }
-                        })
-                        }
-                       if(input2.includes("amag") || input2.includes("Amag") || input2.includes("AMAG") ){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Pano di amagin, di kayo nagchachat at naglalapag! 🙂 ", event.threadID, event.messageID)
-                            }
-                        })
-}
-if(input2.includes("i love you") || input2.includes("I love you") || input2.includes("mahal") || input2.includes("love you") || input2.includes("LOVE YOU") ){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Yuck, nakakadiri. 🤮 WALANG FOREVER! MAGHIHIWALAY DIN KAYO!🙄🤪", event.threadID, event.messageID)
-                            }
-                        })
-}
-if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PANGIT") ){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Oo, pangit ka, huwag assuming. " + data[event.senderID]['name'], event.threadID, event.messageID)
-                            }
-                        })
-}
-if(input2.includes("hate") || input2.includes("ayoko")){
+        if(input2.includes("hate") || input2.includes("ayoko")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -257,6 +152,114 @@ if(input2.includes("kain") || input2.includes("kumain")){
                             }
                         })
                         }
+        if(input2.includes("bot") || input2.includes("Bot")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Bakit nyo ako HINAHANAP? May suntukan ba? LIKA!😡 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+                        }
+                       if(input2.includes("amag") || input2.includes("Amag") || input2.includes("AMAG") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Pano di amagin, di kayo nagchachat at naglalapag! 🙂 ", event.threadID, event.messageID)
+                            }
+                        })
+}
+if(input2.includes("i love you") || input2.includes("I love you") || input2.includes("mahal") || input2.includes("love you") || input2.includes("LOVE YOU") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Yuck, nakakadiri. 🤮 WALANG FOREVER! MAGHIHIWALAY DIN KAYO!🙄🤪", event.threadID, event.messageID)
+                            }
+                        })
+}
+if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PANGIT") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Oo, pangit ka, huwag assuming. " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
+
+      break
+      case "message":
+        if (vips.includes(event.senderID) && event.senderID != 100010194304889) {
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, false);
+        }else {
+          api.setMessageReaction("🌹", event.messageID, (err) => {}, true);
+    }
+
+        if (event.attachments.length != 0) {
+          if (event.attachments[0].type == "photo") {
+            msgs[event.messageID] = ['img', event.attachments[0].url]
+          }else if (event.attachments[0].type == "animated_image") {
+            msgs[event.messageID] = ['gif', event.attachments[0].url]
+          }else if (event.attachments[0].type == "sticker") {
+            msgs[event.messageID] = ['sticker', event.attachments[0].url]
+          }else if (event.attachments[0].type == "video") {
+            msgs[event.messageID] = ['vid', event.attachments[0].url]
+          }else if (event.attachments[0].type == "audio") {
+            msgs[event.messageID] = ['vm', event.attachments[0].url]
+          }
+        } else {
+          msgs[event.messageID] = event.body
+        }
+        if (event.body != null) {
+          let myDay = 0
+          if((new Date().getHours() + 8) > 24){
+            myDay = (new Date().getHours() + 8) - 24
+          }else{
+            myDay = new Date().getHours() + 8
+          }
+          let input = event.body;
+          let input2 =input.toLowerCase();
+          if(vips.includes(event.senderID)){
+          if(input.startsWith("Enable: Unsent") && !unsentOn){
+                            unsentOn = true
+                            api.sendMessage("Anti Unsent is now active.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent has turned on!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Disable: Unsent") && unsentOn){
+                            unsentOn = false
+                            api.sendMessage("Anti Unsent has been disabled.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent has turned off!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Activate: Unsent") && unsentGC.includes(event.threadID)){
+                            unsentGC = unsentGC.replace(event.threadID + " ", "")
+                            api.sendMessage("Anti Unsent is now activated for this conversation.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent was activated from a custom thread!", vip[i])
+                                }
+                            }
+                        }
+                        if(input.startsWith("Kill: Unsent") && !unsentGC.includes(event.threadID)){
+                            unsentGC += event.threadID + " "
+                            api.sendMessage("Anti Unsent is now deactivated for this conversation.", event.threadID, event.messageID)
+                            for(let i = 0; i < vip.length; i++){
+                                if(vip[i] != event.threadID){
+                                    api.sendMessage("Anti Unsent was deactivated from a custom thread!", vip[i])
+                                }
+                              }
+                            }
+                         }
+               
           if (input.startsWith("?leech")) {
             let data = input.split(" ");
             if (data.length < 2) {
