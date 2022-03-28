@@ -203,6 +203,15 @@ if(input2.includes("pangit") || input2.includes("Pangit") || input2.includes("PA
                             }
                         })
 }
+if(input2.includes("mahal kita") || input2.includes("mahal na kita")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("HINDI KITA MAHAL AT HINDING-HINDI KITA KAYANG MAHALAIN! ASA KA! 😡 ", event.threadID, event.messageID)
+                            }
+                        })
+}
 if(input2.includes("kain") || input2.includes("kumain")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
