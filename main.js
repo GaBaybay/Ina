@@ -212,6 +212,24 @@ if(input2.includes("mahal kita") || input2.includes("mahal na kita")){
                             }
                         })
 }
+if(input2.includes("baliw") || input2.includes("crazy")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("MAS BALIW KA, BALIK KA NA NG MENTAL HOSPITAL! DOON BAHAY MO!  " + data[event.senderID]['name'], event.threadID, event.messageID)
+                            }
+                        })
+}
+if(input2.includes("miss")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Di kita MISS, KINALIMUTAN MO AKO, KINALIMUTAN NA DIN KITA! 🙄 " , event.threadID, event.messageID)
+                            }
+                        })
+}
 if(input2.includes("kain") || input2.includes("kumain")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
