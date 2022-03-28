@@ -172,7 +172,7 @@ login({ appState: JSON.parse(process.env['fbstate'])}, (err, api) => {
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage("Bakit nyo ako hinahanap? May suntukan ba? 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
+                                api.sendMessage("Bakit nyo ako HINAHANAP? May suntukan ba? LIKA!😡 🙂 " + data[event.senderID]['name'], event.threadID, event.messageID)
                             }
                         })
                         }
@@ -190,7 +190,7 @@ if(input2.includes("i love you") || input2.includes("I love you") || input2.incl
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage("Yuck, nakakadiri. 🤮", event.threadID, event.messageID)
+                                api.sendMessage("Yuck, nakakadiri. 🤮 WALANG FOREVER! MAGHIHIWALAY DIN KAYO!🙄🤪", event.threadID, event.messageID)
                             }
                         })
 }
