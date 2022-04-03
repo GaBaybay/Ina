@@ -522,6 +522,15 @@ else if (input.startsWith("?meme")){
                             }
                         })
 }   
+if(input2.includes(" tayo")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Walang tayo.", event.threadID, event.messageID)
+                            }
+                        })
+}   
                     else if (input.startsWith("?wiki")) {
                         
                         let data = input.split(" ");
