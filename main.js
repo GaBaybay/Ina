@@ -246,7 +246,7 @@ else if (input.startsWith("?meme")){
                                     if (response == "pakyo") {
                                         api.setMessageReaction("🖕🏾", event.messageID, (err) => {
                                         }, true);
-                                        api.sendMessage("TANGINA MO PAKYOOO😠\nULOL 20mins Max Duration Only!😝", event.threadID, event.messageID);
+                                        api.sendMessage("HABA NA NUN AH.\nULOL 20mins Max Duration Only!😝", event.threadID, event.messageID);
                                     }
                                     else if (response == "err") {
                                         api.sendMessage("❌Invalid Input", event.threadID, event.messageID);
