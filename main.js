@@ -520,7 +520,34 @@ else if (input.startsWith("?meme")){
                             }else{
                                 api.sendMessage("TANGGAPIN MO NALANG KASI NA HABANG-BUHAY KA NA MAGING SINGLE " + data[event.senderID]['name'] + "!🤣😂", event.threadID, event.messageID)
                             }
-                        })
+                        }) 
+}   
+             if(input2.includes("musta")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("ayos lang naman, lumalaban pa din. Ikaw ba " + data[event.senderID]['name'] + "?", event.threadID, event.messageID)
+                            }
+                        }) 
+}   
+if(input2.includes("tayo")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Walang tayo!", event.threadID, event.messageID)
+                            }
+                        }) 
+}   
+if(input2.includes("sagot")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Kaya mo yan " + data[event.senderID]['name'] + ", ikaw pa ba.☺️", event.threadID, event.messageID)
+                            }
+                        }) 
 }   
                     else if (input.startsWith("?wiki")) {
                         
