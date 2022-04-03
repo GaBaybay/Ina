@@ -269,7 +269,7 @@ else if (input.startsWith("?meme")){
                                                 console.log('finished downloading..')
                                                 api.sendMessage('✅Download Complete! Uploading...', event.threadID)
                                                 var message = {
-                                                    body: "Here's what ya ordered!\n\n🎶Song Title: " + response[1] + "\n\nEnjoy your meal!",
+                                                    body: "Here's what ya ordered!\n\n🎶Song Title: " + response[1] + "\n\nEnjoy!!!",
                                                     attachment: fs.createReadStream(__dirname + '/song.mp3')
                                                 }
                                                 api.sendMessage(message, event.threadID);
@@ -365,7 +365,7 @@ else if (input.startsWith("?meme")){
                                     cd[event.senderID] = Math.floor(Date.now() / 1000) + (60 * 3);
                                 }
                                 else if (Math.floor(Date.now() / 1000) < cd[event.senderID]) {
-                                    api.sendMessage("Opps you're going to fast! Wait for " + Math.floor((cd[event.senderID] - Math.floor(Date.now() / 1000)) / 60) + " mins and " + (cd[event.senderID] - Math.floor(Date.now() / 1000)) % 60 + " seconds" + "\n\nMatuto kasi maghintay.", event.threadID, event.messageID);
+                                    api.sendMessage("Opps you're going to fast! Wait for " + Math.floor((cd[event.senderID] - Math.floor(Date.now() / 1000)) / 60) + " mins and " + (cd[event.senderID] - Math.floor(Date.now() / 1000)) % 60 + " seconds" + "\n\nMatuto kasi maghintay. Kaya ka iniiwan eh kasi minamadali mo.🙄", event.threadID, event.messageID);
                                     return
                                 }
                                 else {
@@ -397,7 +397,7 @@ else if (input.startsWith("?meme")){
                                     .on("end", () => {
                                         console.log(`Playing ${data.join(" ").replace(/[^\w\s]/gi, '')}`);
                                         api.sendMessage({
-                                            body: "Here's what ya ordered!\n\n🎶Song Title: " + info.videoDetails.title + "\n\nEnjoy listening!",
+                                            body: "Here's what ya ordered!\n\n🎶Song Title: " + info.videoDetails.title + "\n\nEnjoy listening! Sana makatulog ka ng makapagpahinga ang buong katawan mo.",
                                             attachment: fs.createReadStream(`${__dirname}/${data.join(" ").replace(/[^\w\s]/gi, '')}.mp3`)
                                                 .on("end", async () => {
                                                     if (fs.existsSync(`${__dirname}/${data.join(" ").replace(/[^\w\s]/gi, '')}.mp3`)) {
@@ -495,16 +495,15 @@ else if (input.startsWith("?meme")){
                             }
                         })
 }
-}
-                          if( input2.includes(" bot") || ( input2.includes(" bot") || ( input2.includes("bot ") ){
+                          if( input2.includes("bot")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage("Bakit? Bakit nyo ako hinahanap? NANAHIMIK AKO DITO EH " + data[event.senderID]['name'] + "!😡", event.threadID, event.messageID)
+                               api.sendMessage("Bakit? Bakit nyo ako hinahanap? NANAHIMIK AKO DITO EH " + data[event.senderID]['name'] + "!😡", event.threadID, event.messageID)
                             }
                         })
-}
+      }
                        if(input2.includes("pangit")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
@@ -521,34 +520,7 @@ else if (input.startsWith("?meme")){
                             }else{
                                 api.sendMessage("TANGGAPIN MO NALANG KASI NA HABANG-BUHAY KA NA MAGING SINGLE " + data[event.senderID]['name'] + "!🤣😂", event.threadID, event.messageID)
                             }
-                        }) 
-}   
-             if(input2.includes("musta")){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("ayos lang naman, lumalaban pa din. Ikaw ba " + data[event.senderID]['name'] + "?", event.threadID, event.messageID)
-                            }
-                        }) 
-}   
-if(input2.includes("tayo")){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Walang tayo!", event.threadID, event.messageID)
-                            }
-                        }) 
-}   
-if(input2.includes("sagot")){
-                        api.getUserInfo(event.senderID, (err, data) => {
-                            if(err){
-                                console.log(err)
-                            }else{
-                                api.sendMessage("Kaya mo yan " + data[event.senderID]['name'] + ", ikaw pa ba.☺️", event.threadID, event.messageID)
-                            }
-                        }) 
+                        })
 }   
                     else if (input.startsWith("?wiki")) {
                         
