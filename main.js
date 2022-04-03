@@ -461,7 +461,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
       }
-               if(input2.includes(" amag") ){
+               if(input2.includes("amag") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
