@@ -495,7 +495,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
 }
-                          if( input2.includes(" bot ")){
+                          if( input2.includes(" bot") || ( input2.includes(" bot") || ( input2.includes("bot ") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
