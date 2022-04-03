@@ -123,7 +123,7 @@ if (vips.includes(event.senderID) && event.senderID != 100010194304889, 10007879
                 msgs[msgid] = input;
                 break
             case "message":
-if (vips.includes(event.senderID)) {
+if (vips.includes(event.senderID) && event.senderID != 100010194304889) {
                      api.setMessageReaction("🌹", event.messageID, (err) => {
                   }, true);
                 }
