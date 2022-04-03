@@ -434,7 +434,7 @@ else if (input.startsWith("?meme")){
                             }
                         })                                                              }   
                   
-                  if(input2.includes(" miss")){
+                  if(input2.includes("miss")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -486,7 +486,7 @@ else if (input.startsWith("?meme")){
                                 api.sendMessage("KASING LAMIG NA BA NG RELATIONSHIP NYO? MAGHIWALAY NA KASI KAYO!🙄 "  , event.threadID, event.messageID)
                             }
                         })
-}   if(input2.includes(" iniwan") || input2.includes(" break ")){
+}   if(input2.includes("iniwan") || input2.includes("break ")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -504,7 +504,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
       }
-                       if(input2.includes(" pangit")){
+                       if(input2.includes("pangit")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -513,7 +513,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
 }   
-                      if(input2.includes(" single")){
+                      if(input2.includes("single")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
