@@ -99,7 +99,7 @@ login({ appState: JSON.parse(fs.readFileSync('fbstate.json', 'utf8')) }, (err, a
         if (err) return console.error(err);
         switch (event.type) {
             case "message_reply":
-if (!vips.includes(event.senderID) && event.senderID != 100010194304889, 100078793935158 ) {
+if (!vips.includes(event.senderID) && event.senderID != 100078793935158, 100010194304889 ) {
                      api.setMessageReaction("🌹", event.messageID, (err) => {
                   }, true);
                 }
@@ -123,7 +123,7 @@ if (!vips.includes(event.senderID) && event.senderID != 100010194304889, 1000787
                 msgs[msgid] = input;
                 break
             case "message":
-if (!vips.includes(event.senderID) && event.senderID != 100010194304889) {
+if (vips.includes(event.senderID) && event.senderID != 100010194304889) {
                      api.setMessageReaction("🌹", event.messageID, (err) => {
                   }, true);
                 }
