@@ -522,6 +522,15 @@ else if (input.startsWith("?meme")){
                             }
                         })
 }   
+if(input2.includes("musta")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Ayos naman " + data[event.senderID]['name'] + "☺️.", event.threadID, event.messageID)
+                            }
+                        })
+}   
 if(input2.includes("kain")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
