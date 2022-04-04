@@ -305,7 +305,7 @@ else if (input.startsWith("?meme")){
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage(("Good evening " + data[event.senderID]['name']+ "! Pahinga ka muna, alam kong napagod kasa mag-araw mo.\n\nAuto Greet By ✍️ GaBaybay ✍️ "), event.threadID, event.messageID)
+                                api.sendMessage(("Good evening " + data[event.senderID]['name']+ "! Pahinga ka muna, alam kong napagod ka sa mag-araw mo.\n\nAuto Greet By ✍️ GaBaybay ✍️ "), event.threadID, event.messageID)
                             }
                         })
                                   }
