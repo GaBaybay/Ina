@@ -443,7 +443,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
       }
-                if(input2.includes("thank you") || input2.includes(" salamat")){
+                if(input2.includes("thank you") || input2.includes("salamat")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -452,7 +452,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
       } 
-                  if(input2.includes(" bye") || input2.includes("paalam")){
+                  if(input2.includes("bye") || input2.includes("paalam")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -478,7 +478,7 @@ else if (input.startsWith("?meme")){
                             }
                         })
                   }
-                     if(input2.includes(" lamig") || input2.includes(" cold")){
+                     if(input2.includes("lamig") || input2.includes(" cold")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
