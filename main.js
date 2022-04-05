@@ -506,7 +506,7 @@ if(input2.includes("iniwan") || input2.includes("break ")){
                             }
                         })
       }
-if(input2.includes("ayos") || input2.includes("okay") ||  input2.includes("ok")){
+if(input2.includes("ayos") || input2.includes("okay")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
