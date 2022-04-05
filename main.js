@@ -504,6 +504,15 @@ else if (input.startsWith("?meme")){
                             }
                         })
       }
+if(input2.includes("ayos") || input2.includes("okay") ||  input2.includes("ok")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Buti naman din kung ganun " + data[event.senderID]['name'] + ".☺️", event.threadID, event.messageID)
+                            }
+                        })
+}   
                        if(input2.includes("pangit")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
@@ -519,6 +528,24 @@ else if (input.startsWith("?meme")){
                                 console.log(err)
                             }else{
                                 api.sendMessage("TANGGAPIN MO NALANG KASI NA HABANG-BUHAY KA NA MAGING SINGLE " + data[event.senderID]['name'] + "!🤣😂", event.threadID, event.messageID)
+                            }
+                        })
+}   
+if(input2.includes("mapanakit")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("DESERVE!", event.threadID, event.messageID)
+                            }
+                        })
+}   
+if(input2.includes("gusto kita")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("I DON'T LIKE YOU " + data[event.senderID]['name'] + "! NEVER!", event.threadID, event.messageID)
                             }
                         })
 }   
