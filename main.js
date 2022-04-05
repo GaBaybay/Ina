@@ -469,7 +469,8 @@ else if (input.startsWith("?meme")){
                                 api.sendMessage("PAANO HINDI AMAGIN, DI KAYO NAGLALAPAG! TAPOS MAGREREKLAMO KAYO!🙄 "  , event.threadID, event.messageID)
                             }
                         })
-      }   if(input2.includes(" init") ){
+      } 
+  if(input2.includes(" init") ){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -486,7 +487,8 @@ else if (input.startsWith("?meme")){
                                 api.sendMessage("KASING LAMIG NA BA NG RELATIONSHIP NYO? MAGHIWALAY NA KASI KAYO!🙄 "  , event.threadID, event.messageID)
                             }
                         })
-}   if(input2.includes("iniwan") || input2.includes("break ")){
+}   
+if(input2.includes("iniwan") || input2.includes("break ")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
@@ -513,6 +515,15 @@ if(input2.includes("ayos") || input2.includes("okay") ||  input2.includes("ok"))
                             }
                         })
 }   
+if(input2.includes(" ayaw") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("HUWAG MO KASING PILITIN, AYAW NGA NYA SA'YO EH!🙄 "  , event.threadID, event.messageID)
+                            }
+                        })
+      } 
                        if(input2.includes("pangit")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
