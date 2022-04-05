@@ -524,12 +524,31 @@ if(input2.includes(" ayaw") ){
                             }
                         })
       } 
+if(input2.includes("iyak") ){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("IYAK WELL! IYAKIN. 🙄 "  , event.threadID, event.messageID)
+                            }
+                        })
+      } 
+
                        if(input2.includes("pangit")){
                         api.getUserInfo(event.senderID, (err, data) => {
                             if(err){
                                 console.log(err)
                             }else{
                                 api.sendMessage("ANUNAMAN KUNG PANGIT AKO? MAS PANGIT KA NAMAN KASING PANGIT NG UGALI MONG MAPANGHUSGA " + data[event.senderID]['name'] + "!🙄", event.threadID, event.messageID)
+                            }
+                        })
+}   
+if(input2.includes("hello")){
+                        api.getUserInfo(event.senderID, (err, data) => {
+                            if(err){
+                                console.log(err)
+                            }else{
+                                api.sendMessage("Hello din " + data[event.senderID]['name'] + ", kamusta ka na?☺️", event.threadID, event.messageID)
                             }
                         })
 }   
