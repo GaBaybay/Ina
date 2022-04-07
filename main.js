@@ -314,7 +314,7 @@ else if (input.startsWith("?meme")){
                             if(err){
                                 console.log(err)
                             }else{
-                                api.sendMessage(("Good night " + data[event.senderID]['name']+ "! Seweet dreams and have a peaceful resting.\n\nAuto Greet By ✍️ GaBaybay ✍️ "), event.threadID, event.messageID)
+                                api.sendMessage(("Good night " + data[event.senderID]['name']+ "! Sweet dreams and have a peaceful resting.\n\nAuto Greet By ✍️ GaBaybay ✍️ "), event.threadID, event.messageID)
                             }
                         })
 } 
